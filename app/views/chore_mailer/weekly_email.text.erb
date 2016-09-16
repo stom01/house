@@ -1,0 +1,6 @@
+Your new chores are the following:
+
+<% @chores.each do |chore| %>
+  <%= chore.name %><%= ": #{chore.description}" unless chore.description.blank? %>
+
+<% end %>
