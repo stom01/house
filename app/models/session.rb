@@ -11,4 +11,9 @@ class Session < ApplicationRecord
     return false if record.blank?
     record.password == BCrypt::Engine.hash_secret(token, record.salt)
   end
+
+  def self.clear_session(id)
+    record = find_by(id: id)
+    record.destroy if record
+  end
 end

@@ -147,6 +147,10 @@ body.signed_out {
   display: none;
 }
 
+.signed_in .login {
+  display: none;
+}
+
 .signed_out .login {
   position: absolute;
   right: 0;

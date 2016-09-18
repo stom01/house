@@ -4,9 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     if password == Rails.configuration.password
-      session[:remember_token] = BCrypt::Password.create("")
-      session[:remember_id] = Session.create(password: session[:remember_token]).id
-      flash[:success] = "Signed in!"
+      login
       redirect_to root_path
     else
       flash[:danger] = "Wrong Password"
@@ -23,6 +21,13 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def login
+    session[:remember_token] = BCrypt::Password.create("")
+    session[:remember_id] = Session.create(password: session[:remember_token]).id
+    session[:expires_at] = Time.current.advance(days: 7)
+    flash[:success] = "Signed in!"
+  end
 
   def password
     BCrypt::Engine.hash_secret(params['password'], Rails.configuration.salt)
