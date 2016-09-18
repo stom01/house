@@ -132,12 +132,22 @@ a {
   }
 }
 
-
 body {
-  padding: 50px;
-  padding-top: 20px;
   background-image:url('bowdoin.jpg');
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+body.signed_out {
+  padding-top: 20px;
+}
+
+.signed_out .navbar {
+  display: none;
+}
+
+.navbar {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
