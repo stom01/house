@@ -11,7 +11,10 @@
   <body class="<%= signed_in? ? 'signed_in' : 'signed_out' %>">
     <%= render 'layouts/header' %>
     <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
+      <div class="alert alert-<%= key %>">
+        <button class="close" data-dismiss="alert">×</button>
+        <%= value %>
+      </div>
     <% end %>
     </div>
     <%= yield %>

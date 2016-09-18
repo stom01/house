@@ -147,6 +147,14 @@ body.signed_out {
   display: none;
 }
 
+.signed_out .login {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  background: transparent;
+}
+
 .navbar {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
