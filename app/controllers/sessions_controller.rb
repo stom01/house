@@ -16,8 +16,8 @@ class SessionsController < ApplicationController
 
   def destroy
     Session.where(id: session[:remember_id]).destroy_all
-    session[:remember_token] = nil
-    session[:remember_id] = nil
+    session[:remember_token] = ""
+    session[:remember_id] = ""
     flash[:success] = "Signed out!"
     redirect_to root_path
   end
