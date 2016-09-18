@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: Rails.configuration.from_email
+  default from: %("House Chores" <#{Rails.configuration.from_email}>)
   layout 'mailer'
 end
