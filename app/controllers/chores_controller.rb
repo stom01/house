@@ -1,4 +1,6 @@
 class ChoresController < ApplicationController
+  before_action :authenticate, except: [:index]
+
   expose :chores, -> { Chore.all.includes(:resident).order(:id) }
   expose :chore
 

@@ -1,0 +1,10 @@
+<div class='myform centered'>
+  <h2 class='title'>Sign in</h2>
+
+  <%= form_tag login_path, method: 'post' do %>
+    <%= password_field_tag :password, '', placeholder: 'Password', autofocus: true, class: 'centered' %>
+    <div class='actions'>
+      <%= submit_tag 'Submit', data: { disable_with: 'Please wait...' }, class: 'centered btn blue' %>
+    </div>
+  <% end %>
+</div>

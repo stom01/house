@@ -65,4 +65,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.from_email = ENV['EMAIL']
+  config.password = ENV['PASS']
+  config.salt = ENV['SALT']
+  config.remember_token = ENV['COOKIE']
 end

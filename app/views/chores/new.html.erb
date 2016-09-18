@@ -8,7 +8,7 @@
       <% end %>
     <% end %>
 
-    <%= f.text_field :name, placeholder: "Name", class: "centered" %>
+    <%= f.text_field :name, placeholder: "Name", autofocus: true, class: "centered" %>
     <%= f.text_field :description, placeholder: "Description", class: "centered" %>
     <label class="centered block">Assigned to:</label>
     <%= f.collection_select :resident_id, Resident.all, :id, :name,

@@ -96,4 +96,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.from_email = ENV['EMAIL']
+  config.password = ENV['PASS']
+  config.salt = ENV['SALT']
+  config.remember_token = ENV['COOKIE']
 end

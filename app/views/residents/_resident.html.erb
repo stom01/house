@@ -1,7 +1,7 @@
 <% cache resident do %>
   <div class="box centered">
     <h3><%= resident.name %></h3>
-    <%= link_to 'edit', edit_resident_path(resident), class: 'edit' %>
+    <%= link_to 'edit', edit_resident_path(resident), class: 'edit' if signed_in? %>
     <div class="mychores">
       <% unless resident.chores.any? %>
         <p>No chores this week!</p>

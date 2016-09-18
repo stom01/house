@@ -1,4 +1,6 @@
 class ResidentsController < ApplicationController
+  before_action :authenticate, except: [:index]
+  
   expose :residents, -> { Resident.all.includes(:chores).order(:id) }
   expose :resident
 

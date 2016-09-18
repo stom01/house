@@ -8,7 +8,7 @@
       <% end %>
     <% end %>
 
-    <%= f.text_field :name, placeholder: "Name", class: "centered" %>
+    <%= f.text_field :name, placeholder: "Name", autofocus: true, class: "centered" %>
     <%= f.email_field :email, placeholder: "Email", class: "centered" %>
     <div class="actions">
       <%= f.submit "Submit", data: { disable_with: "Please wait...." }, class: "centered btn blue" %>
