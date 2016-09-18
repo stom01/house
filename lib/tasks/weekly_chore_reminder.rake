@@ -12,7 +12,7 @@ namespace :chores do
     puts ' done'
 
     print 'Switching chores: '
-    residents.each_with_index do |resident_id, i|
+    residents.each_with_index do |resident, i|
       Chore.where(id: chore_ids[(i+1)%chore_ids.size])
         .update_all(resident_id: resident.id)
       print '.'
