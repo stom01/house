@@ -98,5 +98,4 @@ Rails.application.configure do
   config.from_email = ENV['EMAIL']
   config.password = ENV['PASS']
   config.salt = ENV['SALT']
-  config.remember_token = ENV['COOKIE']
 end
