@@ -134,6 +134,10 @@ a {
 
 
 body {
-  background-color: $background-gray;
   padding: 50px;
+  padding-top: 20px;
+  background-image:url('bowdoin.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
