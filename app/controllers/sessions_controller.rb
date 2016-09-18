@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:danger] = "Wrong Password"
-      redirect_to root_path
+      redirect_to login_path
     end
   end
 
@@ -16,7 +16,6 @@ class SessionsController < ApplicationController
     Session.where(id: session[:remember_id]).destroy_all
     session[:remember_token] = ""
     session[:remember_id] = ""
-    flash[:success] = "Signed out!"
     redirect_to root_path
   end
 
@@ -26,7 +25,6 @@ class SessionsController < ApplicationController
     session[:remember_token] = BCrypt::Password.create("")
     session[:remember_id] = Session.create(password: session[:remember_token]).id
     session[:expires_at] = Time.current.advance(days: 7)
-    flash[:success] = "Signed in!"
   end
 
   def password
