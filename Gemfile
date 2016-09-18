@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'decent_exposure', '3.0.0'
+gem 'bootstrap-sass', '~> 3.2.0'
 
 group :development, :test do
   gem 'dotenv-rails'

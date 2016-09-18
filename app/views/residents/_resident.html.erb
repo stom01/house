@@ -1,0 +1,17 @@
+<% cache resident do %>
+  <div class="box centered">
+    <h3><%= resident.name %></h3>
+    <%= link_to 'edit', edit_resident_path(resident), class: 'edit' %>
+    <div class="mychores">
+      <% unless resident.chores.any? %>
+        <p>No chores this week!</p>
+      <% end %>
+      <% resident.chores.each do |chore| %>
+        <p>
+          <%= chore.name %>
+          <%= chore.description unless true || chore.description.blank? %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+<% end %>

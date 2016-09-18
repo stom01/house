@@ -1,0 +1,17 @@
+<div class="myform centered">
+  <h2 class="title">New Resident</h2>
+
+  <%= form_for :resident, url: residents_path do |f| %>
+    <% if resident %>
+      <% resident.errors.full_messages.each do |value| %>
+        <div class="alert alert-danger"><%= value %></div>
+      <% end %>
+    <% end %>
+
+    <%= f.text_field :name, placeholder: "Name", class: "centered" %>
+    <%= f.email_field :email, placeholder: "Email", class: "centered" %>
+    <div class="actions">
+      <%= f.submit "Submit", data: { disable_with: "Please wait...." }, class: "centered btn blue" %>
+    </div>
+  <% end %>
+</div>

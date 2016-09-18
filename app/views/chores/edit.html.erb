@@ -1,0 +1,25 @@
+<div class="myform centered">
+  <h2 class="title">Edit Chore</h2>
+
+  <%= form_for(chore, url: chore_path, html: { method: :patch, class: 'more-below' }) do |f| %>
+    <% chore.errors.full_messages.each do |value| %>
+      <div class="alert alert-danger"><%= value %></div>
+    <% end %>
+    <%= f.text_field :name, placeholder: "Name", class: "centered" %>
+    <%= f.text_field :description, placeholder: "Description",
+      class: "centered" %>
+    <%= f.collection_select :resident_id, Resident.all, :id, :name,
+      {include_blank: "Unassigned"},
+      {class: 'ui dropdown centered'} %>
+    <div class="btn btn-gray clear">Clear</div>
+
+    <div class="actions">
+      <%= f.submit "Update", data: { disable_with: "Please wait...." },
+        class: "centered btn blue" %>
+    </div>
+  <% end %>
+
+  <%= button_to "Delete Chore", chore_path(chore),
+    data: { confirm: "Are you sure?" }, method: :delete,
+    class: "centered btn btn-gray" %>
+</div>

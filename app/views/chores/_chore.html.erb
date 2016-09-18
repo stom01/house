@@ -1,0 +1,16 @@
+<% cache chore do %>
+  <div class="box centered">
+    <h3><%= chore.name %></h3>
+    <%= link_to 'edit', edit_chore_path(chore), class: 'edit' %>
+    <% unless chore.description.blank? %>
+      <p><%= chore.description %><p>
+    <% end %>
+    <%= form_for(chore, url: chore_path(chore), html: { method: :patch, remote: true, class: 'pseudo' }) do |f| %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= f.collection_select :resident_id, Resident.all, :id, :name,
+        {include_blank: "Unassigned"},
+        {class: 'ui dropdown centered'} %>
+      <div class="btn btn-gray clear">Clear</div>
+    <% end %>
+  </div>
+<% end %>

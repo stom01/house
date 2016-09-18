@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
+//= require autosize
+//= require dropdown
+//= require transition
 //= require turbolinks
 //= require_tree .

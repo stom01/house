@@ -1,0 +1,23 @@
+<div class="myform centered">
+  <h2 class="title">New Chore</h2>
+
+  <%= form_for :chore, url: chores_path do |f| %>
+    <% if chore %>
+      <% chore.errors.full_messages.each do |value| %>
+        <div class="alert alert-danger"><%= value %></div>
+      <% end %>
+    <% end %>
+
+    <%= f.text_field :name, placeholder: "Name", class: "centered" %>
+    <%= f.text_field :description, placeholder: "Description", class: "centered" %>
+    <label class="centered block">Assigned to:</label>
+    <%= f.collection_select :resident_id, Resident.all, :id, :name,
+      {include_blank: "Unassigned"},
+      {class: 'ui dropdown centered'} %>
+    <div class="btn btn-gray clear">Clear</div>
+    <div class="actions">
+      <%= f.submit "Submit", data: { disable_with: "Please wait...." },
+        class: "centered btn blue" %>
+    </div>
+  <% end %>
+</div>

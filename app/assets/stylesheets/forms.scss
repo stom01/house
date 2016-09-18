@@ -1,0 +1,120 @@
+.myform {
+  margin-top: 40px;
+  background-color: $white;
+  border-radius: 7px;
+  width: 350px;
+  border-color: $gray;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.myform form {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background-color: white;
+  padding:30px;
+}
+
+.myform h2.title {
+  text-align: center;
+  border-bottom: 1px solid $gray;
+  padding-bottom: 20px;
+}
+
+.myform {
+  input, a {
+    display: block;
+  }
+
+  input[type=email], input[type=password], input[type=text] {
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: 250px;
+    border: 1px solid $gray;
+    height: 37px;
+    padding: 10px;
+  }
+}
+
+.myform .actions {
+  padding-top: 15px;
+}
+
+.myform input[type=submit].blue {
+  width: 250px;
+  color: $white;
+  background-color: $blue;
+  height: 43px;
+  font-size: 20px;
+  font-weight: 500;
+  a {
+    line-height: 43px;
+  }
+  &:hover {
+    background-color: $darkened-blue;
+  }
+}
+
+.myform .forgot {
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 300;
+  color: #999999;
+  text-decoration: none;
+  &:hover {
+    color: #000000;
+  }
+}
+
+.myform .btn-container {
+  border-top: 1px solid $gray;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.myform .btn-gray {
+  height: 43px;
+  width: 250px;
+  a {
+    line-height: 43px;
+  }
+}
+
+.myform form.more-below {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 1px solid $gray;
+}
+
+.myform .ui.dropdown, .myform label {
+  margin-left: 19px;
+}
+
+.myform .ui.dropdown {
+  background-color: $white;
+  border: 1px solid $gray;
+  display: inline-block;
+  min-width: 170px;
+  margin-right: 7px;
+}
+
+.myform .alert {
+  width: 250px;
+  margin-left: 19px;
+}
+
+.myform .clear {
+  height: 38px;
+  font-size: 14px;
+  line-height: 26px;
+  width: 70px;
+  display: inline-block;
+}
+
+.myform .ui.selection.dropdown .menu {
+  max-height: 150px;
+}
+.myform .ui.dropdown .menu > .item {
+  font-size: 14px;
+  line-height: 14px;
+}

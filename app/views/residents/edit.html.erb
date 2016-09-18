@@ -1,0 +1,17 @@
+<div class="myform centered">
+  <h2 class="title">Edit Resident</h2>
+
+  <%= form_for(resident, url: resident_path, html: { method: :patch, class: 'more-below' }) do |f| %>
+    <% resident.errors.full_messages.each do |value| %>
+      <div class="alert alert-danger"><%= value %></div>
+    <% end %>
+    <%= f.text_field :name, placeholder: "Name", class: "centered" %>
+    <%= f.email_field :email, placeholder: "Email", class: "centered" %>
+    <div class="actions">
+      <%= f.submit "Update", data: { disable_with: "Please wait...." }, class: "centered btn blue" %>
+    </div>
+  <% end %>
+
+  <%= button_to "Delete Resident", resident_path(resident), data: { confirm: "Are you sure?" }, method: :delete, class: "centered btn btn-gray" %>
+
+</div>
