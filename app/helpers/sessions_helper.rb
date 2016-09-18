@@ -1,5 +1,6 @@
 module SessionsHelper
   def signed_in?
+    session[:session_id] = ""
     check_tokens? && check_time?
   end
 
@@ -24,7 +25,8 @@ module SessionsHelper
   end
 
   def check_time?
-    if Time.parse(session[:expires_at]) < Time.current
+    time = get_time(session[:expires_at])
+    if !time.blank? && time < Time.current
       clear_session
       false
     else
@@ -38,5 +40,14 @@ module SessionsHelper
     session[:remember_token] = ""
     session[:expires_at] = ""
     flash[:warning] = "Session Expired"
+  end
+
+  def get_time(time_string)
+    return nil if time_string.blank?
+    begin
+      Time.parse(time_string)
+    rescue ArgumentError
+      nil
+    end
   end
 end
