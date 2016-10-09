@@ -3,7 +3,7 @@ namespace :chores do
   task weekly_reminder: :environment do
     Time.zone = 'Eastern Time (US & Canada)'
     if Time.current.sunday?
-      residents = Resident.all
+      residents = Resident.all.order(:id)
       chore_ids = []
       residents.each do |resident|
         chore_ids << resident.chores.pluck(:id)
